@@ -1,16 +1,21 @@
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileReader;
 import java.io.IOException;
 
 public class wallscript {
 
   wallscript() {
-    if (fileExists()) {
-
+    File tempWallpDir = new File("tempWallpDir.txt");
+    try {
+      getWallPaperDir();
+    } catch (IOException e) {
+      e.printStackTrace();
     }
 
-  }
-
-  public void getWallPaperDir() {
+    // if (fileExists()) {
+    // // do something
+    // }
 
   }
 
@@ -22,4 +27,24 @@ public class wallscript {
       return false;
     }
   }
+
+  public void createTempWpDirFile() {
+
+  }
+
+  public void getWallPaperDir() throws IOException {
+    File file = new File("wallpaperDirectory.txt");
+    BufferedReader br = new BufferedReader(new FileReader(file));
+    String wallpaperDirectory = br.readLine();
+    br.close();
+  }
+
+  // public String selectRandom() {
+
+  // }
+
+  public void setWallpaper() {
+
+  }
+
 }
